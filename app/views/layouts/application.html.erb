@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>RailsBlog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <styles>
+      body {
+        padding-top: 70px;
+      }
+    </styles>
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><i class="far fa-image"></i> PhotoGallery</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li> <a href="<%= pages_home_path %>">Home</a> </li>
+          <li> <a href="<%= pages_post_path %>">Post</a> </li>
+          <li> <a href="<%= pages_about_path %>">About us</a> </li>
+          <li> <a href="<%= pages_contact_path %>">Contact</a> </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li> <a href="/form"><i class="fas fa-user-plus"></i> Sign up</a> </li>
+          <li> <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
     <%= yield %>
+
+  </div>
+
   </body>
 </html>
