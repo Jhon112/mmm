@@ -1,5 +1,14 @@
 class PagesController < ApplicationController
+
+  layout "login_layout", only: [:hello]
+
+
   def home
+  end
+
+
+  def hello
+    @name = params[:name]
   end
 
 
@@ -16,9 +25,7 @@ class PagesController < ApplicationController
   end
 
   # Posts 
-  def post
-    @arr = ["Este", "Es", "Un", "array"]
-  end
+
 
 
 end

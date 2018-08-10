@@ -1,0 +1,15 @@
+<div class="jumbotron">
+    <h1>Hello, you can post your picture here!</h1>
+    <div class="container">
+        <div class="row">            
+            <ul>
+                <% @posts.each do |post|%>
+                    <div class="col col-md-4">
+                        <li><h3><i class="fas fa-cannabis"></i> <%= post.title %> </h3></li>
+                        <p><%= post.body %></li></p>
+                    </div>
+                <% end %>    
+            </ul>
+        </div>
+    </div>
+</div> 

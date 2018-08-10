@@ -11,11 +11,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <styles>
+    <style>
       body {
         padding-top: 70px;
       }
-    </styles>
+
+      ul {
+        list-style: none;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -33,11 +38,12 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li> <a href="<%= pages_home_path %>">Home</a> </li>
-          <li> <a href="<%= pages_post_path %>">Post</a> </li>
-          <li> <a href="<%= pages_about_path %>">About us</a> </li>
-          <li> <a href="<%= pages_contact_path %>">Contact</a> </li>
-        </ul>
+          <li> <%= link_to "Home", home_path %> </li>
+          <li> <%= link_to "Post", index_path %> </li>
+          <li> <%= link_to "About Us", about_path %></li>
+          <li> <%= link_to "Contact", contact_path %> <li>
+          <li> <%= link_to "Hello", hello_url('Jhon Arias')%></li>
+        </ul> 
         <ul class="nav navbar-nav navbar-right">
           <li> <a href="/form"><i class="fas fa-user-plus"></i> Sign up</a> </li>
           <li> <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a> </li>
