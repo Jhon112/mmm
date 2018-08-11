@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  layout "login_layout", only: [:hello]
+  layout "login_layout", only: [:about]
 
 
   def home

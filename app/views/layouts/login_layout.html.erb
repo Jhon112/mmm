@@ -1,73 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-  <title>RailsBlog</title>
-  <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PhotoGallery!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+ html, body { 
+   
+   width: 100%; height: 100%; 
+ 
+ }
+.bg-img { position: relative; width: 100%; height: 100%; background: url('http://unsplash.it/1200x800')
+center center no-repeat; background-size: cover;
 
-          <style>
-            body {
-              padding-top: 70px;
-            }
+ &:before { content: ''; position: absolute; top: 0; right: 0; bottom: 0;
+left: 0; background-image: linear-gradient(to bottom right, #002f4b, #dc4225); opacity: .6;
 
-            ul {
-              list-style: none;
-            }
-          </style>
+ }
+  }
+  </style>
+
 
 </head>
-
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">
-          <i class="far fa-image"></i> PhotoGallery</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li>
-            <%= link_to "Home", home_path %>
-          </li>
-          <li>
-            <%= link_to "Post", index_path %>
-          </li>
-          <li>
-            <%= link_to "About Us", about_path %>
-          </li>
-          <li>
-            <%= link_to "Contact", contact_path %>
-              <li>
-                <li>
-                  <%= link_to "Hello", hello_url('Jhon Arias')%>
-                </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><p>welcome <%= @name %></p></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <%= yield %>
+<div class="bg-img"></div>
 
-  </div>
 
+ <div class="container">
+
+  <%= yield %>
+
+ </div>
 </body>
-
 </html>
+
