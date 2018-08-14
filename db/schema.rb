@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_015031) do
+ActiveRecord::Schema.define(version: 2018_08_14_014739) do
 
   create_table "courses", force: :cascade do |t|
-    t.string "Names"
-    t.text "Descriptions"
-    t.float "Prices"
+    t.string "names"
+    t.text "descriptions"
+    t.float "prices"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_id"
+    t.string "nit"
+    t.index ["student_id"], name: "index_courses_on_student_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -26,12 +29,23 @@ ActiveRecord::Schema.define(version: 2018_08_11_015031) do
     t.boolean "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "Names"
-    t.string "Surnames"
-    t.integer "Ages"
+    t.string "names"
+    t.string "surnames"
+    t.float "ages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "phone"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
