@@ -43,6 +43,7 @@
           <li> <%= link_to "About Us", about_path %></li>
           <li> <%= link_to "Contact", contact_path %> <li>
           <li> <%= link_to "Hello", hello_url('Jhon Arias')%></li>
+          <li> <%= link_to "Products", products_path %> <li>
         </ul> 
         <ul class="nav navbar-nav navbar-right">
           <li> <a href="/form"><i class="fas fa-user-plus"></i> Sign up</a> </li>
@@ -51,7 +52,12 @@
       </div>
     </div>
   </nav>
+  
   <div class="container">
+
+    <% flash.each do |name, msg|  %>
+      <%=content_tag :div, msg, class: name %>
+    <% end%>
     <%= yield %>
 
   </div>
